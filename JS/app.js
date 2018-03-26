@@ -4,6 +4,9 @@ $('.calculator').on('click',(e)=>{
 
 	calculator.clicked.push($(e.target).text());
 
+
+
+
 })
 
 
@@ -16,8 +19,9 @@ const calculator ={
 
 	// A user should be able to add numbers together.
 	add (num1,num2){
-
-		return num1 + num2;
+	
+		Number(num1.join().replace(',',''));
+		
 	},
 
 	// A user should be able to subtract numbers.
@@ -47,19 +51,28 @@ const calculator ={
 
 	clear(){
 		$('.screen').empty()
-	}
+	},
 
 	
 
-	// getStoredNumber=()=>{
-	// 	for(let i = 0; i < this.clicked; i ++){
-	// 		if()
-	// 	}
+	parseStoredNumber(){
+		for(let i = 0; i < this.clicked.length; i ++){
+			
+			if (this.clicked[i] === '+'){
+
+				let firstNum = this.clicked.slice(0,[i]);
+
+				let secondNum = this.clicked.slice([i+1],this.clicked.length)
+
+				this.add(firstNum,secondNum);
+			}
+		}
 
 
-	// }
 
+	},
 
+	
 }	
 
 
