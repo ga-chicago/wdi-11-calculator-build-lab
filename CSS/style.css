@@ -35,6 +35,7 @@ body {
 	margin-top: 50px;
 
 	margin-left: 25px;
+	margin-bottom: 20px;
 
 	padding-top:30px;
 	font-size: 50px;
@@ -50,15 +51,16 @@ body {
 }
 
 .operator{
-	height:75px;
-	width:75px;
+	height:65px;
+	width:65px;
 	display: inline-block;
-	margin:10px;
+	margin:5px;
+	padding: 2px;
 
 	
 
 	border:1px solid blue;
-	background-color:#0F6FC9;
+	background-color:#2C7FD9;
 	border-radius: 100%;
 }
 
@@ -71,7 +73,7 @@ body {
 	height:50px;
 	width:75px;
 
-	margin:20px;
+	margin:25px;
 	
 	display: inline-block;
 	background-color: #FFC300;
@@ -83,8 +85,8 @@ body {
 .equal{
 	height:50px;
 	width:80px;
-
-	margin-right: -70px;
+	margin-left: 20px;
+	margin-right: -115px;
 	
 	display: inline-block;
 	background-color: #EA9589;
