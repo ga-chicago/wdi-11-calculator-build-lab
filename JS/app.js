@@ -1,9 +1,26 @@
+
+
+
 $('.calculator').on('click',(e)=>{
 	console.log($(this));
 	console.log($(e.target).text());
 
-	calculator.clicked.push($(e.target).text());
+	
 
+	if($(e.target).text() === 'AC'){
+		calculator.clear();
+	}
+
+	else if($(e.target).text()=== '='){
+
+		calculator.solve();
+	}
+
+	else{
+		$('.screen').text($(e.target).text());
+		calculator.clicked.push($(e.target).text());
+
+	}
 
 
 
@@ -20,7 +37,7 @@ const calculator ={
 	// A user should be able to add numbers together.
 	add (num1,num2){
 	
-		Number(num1.join().replace(',',''));
+		return num1 + num2;
 		
 	},
 
@@ -50,27 +67,51 @@ const calculator ={
 	// A user should be able to clear all operations and start from 0.
 
 	clear(){
+		this.clicked = [];
 		$('.screen').empty()
 	},
 
 	
 
-	parseStoredNumber(){
+	solve(){
+		
+
 		for(let i = 0; i < this.clicked.length; i ++){
-			
-			if (this.clicked[i] === '+'){
 
-				let firstNum = this.clicked.slice(0,[i]);
 
-				let secondNum = this.clicked.slice([i+1],this.clicked.length)
 
-				this.add(firstNum,secondNum);
+			if( this.clicked[i] === '+' || this.clicked[i] === '-' || this.clicked[i] === '/' ||this.clicked[i] === '*'){
+
+
+				//Parse number on left of operator
+				let leftSide = this.clicked.slice(0,[i]);
+				//Parse number on right of operator
+				let rightSide = this.clicked.slice([i+1],this.clicked.length)
+				
+				let firstNum = Number(leftSide.join().replace(/,/g,''));
+				let secondNum = Number(rightSide.join().replace(/,/g,''));
+
+				
+				if(this.clicked[i] === '+'){
+					this.output(this.add(firstNum,secondNum));
+				}
+				else if(this.clicked[i] === '-'){
+					this.output(this.subtract(firstNum,secondNum));
+				}
+				else if(this.clicked[i] === '/'){
+					this.output(this.divide(firstNum,secondNum));
+				}
+				else if(this.clicked[i]=== '*'){
+					this.output(this.multiply(firstNum,secondNum));
+				}
+
 			}
-		}
+
+		}	
+
+	}
 
 
-
-	},
 
 	
 }	
