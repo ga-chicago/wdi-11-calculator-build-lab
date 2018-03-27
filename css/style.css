@@ -6,24 +6,32 @@ body {
 header {
 	background-color: yellow;
 	height: 8vh;
+	margin-right: 50px;
+	
 }
 
 
 section {
 	background-color: white;
+	margin-right: 50px;
+	height: 36vh;
 }
 
 div {
 	margin-left: 15px;
+	height: 55px;
+
 }
 
 
 .row-of-buttons > div {
-	border: 1px solid black;
+	border: 2px solid black;
 	display: inline-block;
 	width: 50px;
 	height: 50px;
-	margin-left: 5px;
+	margin: 7px;
+	padding: 5px;
+	font-size: 23px;
 }
 
 
@@ -34,8 +42,4 @@ div {
 
 
 
-/*div {
-	height: 10vh;
 
-}
-*/

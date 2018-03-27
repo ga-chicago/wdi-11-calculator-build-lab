@@ -21,14 +21,15 @@ $(".row-of-buttons > div").on("click", (e) => {
 	if(value === "Clear") {
 		console.log("clear")
 		$("header").empty()
+		let firstNumber = null;
+		let secondNumber = null;
+		let operator = null;
+
+
 
 		// clear display
 
 		// remove any stored information from state
-
-
-
-
 
 	}
 
@@ -67,31 +68,8 @@ $(".row-of-buttons > div").on("click", (e) => {
 	}
 
 
-	
-		// $("header").empty()
 
-			
-			// need to clear second number 
-			
-
-
-
-
-
-
-
-
-
-
-		// remove stored info from state
-
-
-
-
-		// console.log("equals")
-
-
-
+		
 
 	}
 
@@ -109,17 +87,10 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 
 		// (track)/store operator
-
-		
-
-
-		
-
-
+		clearDisplay();
+	
 
 		// need to grab second number enterered and store it in secondNumber
-
-
 
 
 	// option 1: number
@@ -132,41 +103,26 @@ $(".row-of-buttons > div").on("click", (e) => {
 			weStillNeedToClearOutTheFirstNumber = false;
 
 		} 
-			
-
-
-
-
-
-
+	
 			$("header").append(value)
 
 	}
 
 
-
-
-
-
-
 })
 
+// moved this into the operator section to get clear 
 
 const clearDisplay = () => {
+	let firstNumber = null;
+	let secondNumber = null;
+	weStillNeedToClearOutTheFirstNumber = true;
+	let operator = null;
 	$("header").empty()
 }
 
 
 
-// 
-const add = function(a, b) {
 
-	const addition = a + b
 
-	console.log(addition)
 
-	return addition
-
-}
-
-// add(firstNumber)
