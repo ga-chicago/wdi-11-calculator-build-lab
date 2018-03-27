@@ -4,6 +4,8 @@ console.log("This is Linked")
 // application state data
 let firstNumber = null;
 let secondNumber = null;
+
+
 let operator = null;
 let weStillNeedToClearOutTheFirstNumber = true;
 
@@ -36,7 +38,10 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 			// print the result to the screen
 
+
 		// remove stored info from state
+
+
 
 
 		console.log("equals")
@@ -51,6 +56,8 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 		operator = value
 
+		
+
 
 		// grab the number from the display and store in variable
 		firstNumber = ($("header").text())
@@ -64,6 +71,14 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 		// now we're storing a new number 
 
+
+			if(firstNumber === null) {
+			firstNumber =($("header").text())
+			console.log(firstNumber)
+		} 	else {
+			secondNumber = ($("header").text())
+			console.log(secondNumber)
+		}
 
 
 
@@ -86,16 +101,15 @@ $(".row-of-buttons > div").on("click", (e) => {
 			
 
 
-			if(firstNumber === null) {
-				($("header").text())
-		} 	else {
-			secondNumber = ($("header").text())
-		}
+
+
+
 
 
 			$("header").append(value)
 
 	}
+
 
 
 
