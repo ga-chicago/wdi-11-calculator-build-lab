@@ -1,18 +1,19 @@
 // make number buttons update the display 
 // with the number selected as the last digit in the display
-// let display = $("input").val();
 
 
 // create function to put the value of the numbers in the display box
 
 let output = [];
-let addArray = [];
-let subArray = [];
-let multArray = [];
-let divArray = [];
+let selectedNums = [];
+// OK INSTEAD OF DEFINING ALL THE FUNCTIONS IN FOR EACH OPERATOR BUTTON,
+// STORE THE OPERATOR IN A VARIABLE GOSH DARN IT
+// assign variable for operator
+let op = "";
+
 // figure out a way to store results from operations to 
 // this total variable so I can cross operations
-let total = 0;
+total = 0;
 $(".numbers").on("click", function(event){
 	// save current button to variable
 	let currentButton = (event.currentTarget);
@@ -22,6 +23,9 @@ $(".numbers").on("click", function(event){
 	output.push(buttonValue);
 	// return rejoined values from output array
 	let value = Number(output.join(""));
+	// add the selected number to the current numbers array
+	selectedNums.push(value);
+	// put the value in the input field
 	$("#output").val(value);
 })
 
@@ -30,61 +34,65 @@ $("#clear").on("click", function(event) {
 	clear();
 })
 $("#add").on("click", function(event) {
-	// add value in input field to array
-	addArray.push($("#output").val());
-	clear();
+	// store addition operator to a variable
+	op = "+";
 	// if array is greater than 2, eliminate, so I can work with 2 values
-	if (addArray.length > 2) {
+	if (selectedNums.length > 2) {
 		// redefine one value as the sum of the two current values
-		addArray[1] = `${Number(addArray[0]) + Number(addArray[1])}`;
-		addArray.shift();
+		selectedNums[1] = `${Number(selectedNums[0]) + Number(selectedNums[1])}`;
+		selectedNums.shift();
 		// what this results in is [sumSoFar, newNum]
 	}
-	// add two current values in array, store to variable
-	sum = Number(addArray[0]) + Number(addArray[1]);
-	console.log(sum);
-	return sum;
+	// reset output array so the input field can be zeroed out when the next
+	// number is entered
+	output = [];
 })
 // repeat same logic for subtract, multiply, and divide, 
 // just with respective names & operators
 
 $("#subtract").on("click", function(event) {
-	subArray.push($("#output").val());
-	clear();
-	if (subArray.length > 2) {
-		subArray[1] = `${Number(subArray[0]) - Number(subArray[1])}`;
-		subArray.shift();
+	op = "-";
+	if (selectedNums.length > 2) {
+		selectedNums[1] = `${Number(selectedNums[0]) - Number(selectedNums[1])}`;
+		selectedNums.shift();
 	}
-	difference = Number(subArray[0]) - Number(subArray[1]);
-	console.log(difference);
-	return difference;
+	output = [];
 })
 $("#multiply").on("click", function(event) {
-	multArray.push($("#output").val());
-	clear();
-	if (multArray.length > 2) {
-		multArray[1] = `${Number(multArray[0]) * Number(multArray[1])}`;
-		multArray.shift();
+	op = "*";
+	if (selectedNums.length > 2) {
+		selectedNums[1] = `${Number(selectedNums[0]) * Number(selectedNums[1])}`;
+		selectedNums.shift();
 	}
-	product = Number(multArray[0]) * Number(multArray[1]);
-	console.log(product);
-	return product;
+	output = [];
 })
 $("#divide").on("click", function(event) {
-	divArray.push($("#output").val());
-	clear();
-	if (divArray.length > 2) {
-		divArray[1] = `${Number(divArray[0]) / Number(divArray[1])}`;
-		divArray.shift();
+	op = "/";
+	if (selectedNums.length > 2) {
+		selectedNums[1] = `${Number(selectedNums[0]) / Number(selectedNums[1])}`;
+		selectedNums.shift();
 	}
-	quotient = Number(divArray[0]) * Number(divArray[1]);
-	console.log(quotient);
-	return quotient;
+	output = [];
+})
+
+$("#equals").on("click", function(event){
+	// use operator stored in variable to join the two nums as a string
+	totalStr = (`${selectedNums[0] + op + selectedNums[1]}`)
+	// evaluate the string and convert to a number
+	totalNum = Number(eval(totalStr));
+	// return the result to the input field
+	$("#output").val(totalNum);
+	// zero out array so first number can be the total, which can then
+	// be used to calculate again with the next number selected
+	selectedNums = [];
+	selectedNums[0] = totalNum;
 })
 
 const clear = () => {
 	// reset output array to blank
 	output = [];
+	// reset the selectedNums array
+	selectedNums = [];
 	// reset value in input field to 0
 	$("#output").val(0);
 }
