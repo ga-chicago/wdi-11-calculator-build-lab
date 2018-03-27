@@ -30,8 +30,12 @@ $(".numbers").on("click", function(event){
 })
 
 $("#clear").on("click", function(event) {
-	// call clear function
-	clear();
+	// reset output array to blank
+	output = [];
+	// reset the selectedNums array
+	selectedNums = [];
+	// reset value in input field to 0
+	$("#output").val(0);
 })
 $("#add").on("click", function(event) {
 	// store addition operator to a variable
@@ -76,23 +80,24 @@ $("#divide").on("click", function(event) {
 })
 
 $("#equals").on("click", function(event){
-	// use operator stored in variable to join the two nums as a string
-	totalStr = (`${selectedNums[0] + op + selectedNums[1]}`)
-	// evaluate the string and convert to a number
-	totalNum = Number(eval(totalStr));
-	// return the result to the input field
-	$("#output").val(totalNum);
-	// zero out array so first number can be the total, which can then
-	// be used to calculate again with the next number selected
-	selectedNums = [];
-	selectedNums[0] = totalNum;
+	// set condition for 2 numbers so it doesn't give an error message
+	// if there are 0 or 1 numbers in the array
+	if (selectedNums.length === 2) {
+		// use operator stored in variable to join the two nums as a string
+		totalStr = (`${selectedNums[0] + op + selectedNums[1]}`)
+		// evaluate the string and convert to a number
+		totalNum = Number(eval(totalStr));
+		// return the result to the input field
+		if (isNaN(totalNum) || !isFinite(totalNum)) {
+			// in case there's an error
+			console.log("Error");
+			selectedNums = [];
+		} else {
+			$("#output").val(totalNum);
+			// zero out array so first number can be the total, which can then
+			// be used to calculate again with the next number selected
+			selectedNums = [];
+			selectedNums[0] = totalNum;
+		}	
+	}
 })
-
-const clear = () => {
-	// reset output array to blank
-	output = [];
-	// reset the selectedNums array
-	selectedNums = [];
-	// reset value in input field to 0
-	$("#output").val(0);
-}
