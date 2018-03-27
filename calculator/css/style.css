@@ -1,0 +1,72 @@
+div {
+	border: 1px solid black;
+}
+
+.calculator {
+	width: 590px;
+}
+
+.output {
+	height: 60px;
+	width: 584px;
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'IBM Plex Sans', sans-serif;
+	margin-top: 2px;
+	margin-left: 2px;
+	vertical-align: center;
+	text-align: right;
+}
+
+.number, .equals {
+	display: inline-block;
+	height: 56px;
+	width: 31%;
+	margin: 2px;
+	padding: 5px;
+	background-color: lightblue;
+	text-align: center;
+	vertical-align: center;
+	box-sizing: border-box;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 30px;
+
+}
+
+.number-holder, .operator-holder {
+	display: inline-block;
+	margin-top: 5px;
+	box-sizing: border-box;
+	border: none;
+
+}
+
+.row {
+	display: block;
+	height: 60px;
+	width: 500px;
+	border: none;
+}
+
+.operator-holder {
+	height: 250px;
+	width: 80px;
+	margin-bottom: 0;
+
+}
+
+.operator, .delete {
+	width: 98%;
+	height: 45px;
+	margin-top: 4px;
+	background-color: gray;
+	text-align: center;
+	vertical-align: center;
+	box-sizing: border-box;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 30px;
+}
+
+.delete {
+	font-size: 22px;
+}
