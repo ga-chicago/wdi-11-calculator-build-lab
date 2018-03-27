@@ -67,6 +67,14 @@ const calculator ={
 	output(result){
 
 		$('.screen').text(result);
+
+		//If the User wants to do something with the result
+
+		this.clicked =[];
+
+		this.clicked.push(result);
+
+		
 	},
 	// A user should be able to clear all operations and start from 0.
 
