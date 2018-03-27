@@ -27,6 +27,9 @@ $(".row-of-buttons > div").on("click", (e) => {
 		// remove any stored information from state
 
 
+
+
+
 	}
 
 
@@ -34,9 +37,50 @@ $(".row-of-buttons > div").on("click", (e) => {
 	else if(value === "=") {
 
 
-		// perform the operation -- this is where you convert
+		secondNumber = ($("header").text())
+		$("header").empty()
+		console.log(secondNumber)
 
-			// print the result to the screen
+
+
+// perform the operation -- this is where you convert
+// print the result to the screen
+
+		if(operator === "+") { 
+		$("header").append(parseInt(firstNumber) + parseInt(secondNumber))
+		console.log(parseInt(firstNumber) + parseInt(secondNumber))
+
+	}   else if(operator === "-") {
+	
+		$("header").append(parseInt(firstNumber) - parseInt(secondNumber))
+		console.log(parseInt(firstNumber) - parseInt(secondNumber))
+
+	}  	else if(operator === "*") {
+		
+		$("header").append(parseInt(firstNumber) * parseInt(secondNumber))	
+		console.log(parseInt(firstNumber) * parseInt(secondNumber))
+
+	}   else if(operator === "/") {
+		
+		$("header").append(parseInt(firstNumber) / parseInt(secondNumber))
+		console.log(parseInt(firstNumber)  / parseInt(secondNumber))
+	}
+
+
+	
+		// $("header").empty()
+
+			
+			// need to clear second number 
+			
+
+
+
+
+
+
+
+
 
 
 		// remove stored info from state
@@ -44,7 +88,7 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 
 
-		console.log("equals")
+		// console.log("equals")
 
 
 
@@ -56,11 +100,12 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 		operator = value
 
-		
 
+		console.log(operator)
 
 		// grab the number from the display and store in variable
-		firstNumber = ($("header").text())
+		firstNumber =($("header").text())
+		console.log(firstNumber)
 
 
 		// (track)/store operator
@@ -68,18 +113,7 @@ $(".row-of-buttons > div").on("click", (e) => {
 		
 
 
-
-		// now we're storing a new number 
-
-
-			if(firstNumber === null) {
-			firstNumber =($("header").text())
-			console.log(firstNumber)
-		} 	else {
-			secondNumber = ($("header").text())
-			console.log(secondNumber)
-		}
-
+		
 
 
 
@@ -105,7 +139,6 @@ $(".row-of-buttons > div").on("click", (e) => {
 
 
 
-
 			$("header").append(value)
 
 	}
@@ -122,6 +155,8 @@ $(".row-of-buttons > div").on("click", (e) => {
 const clearDisplay = () => {
 	$("header").empty()
 }
+
+
 
 // 
 const add = function(a, b) {
