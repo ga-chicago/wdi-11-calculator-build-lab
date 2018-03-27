@@ -13,10 +13,12 @@ h1 {
   height: 100px;
   width: 400px;
   background-color: #CDFFF9;
-  color:
+  color: #FF530D;
   display: inline-block;
   border: 2px solid grey;
   float: right;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 70px;
 
 }
 
