@@ -84,7 +84,7 @@ const calculator ={
 
 
 			//We want to parse number from left and right of operator
-			if( this.clicked[i] === '+' || this.clicked[i] === '-' || this.clicked[i] === '/' ||this.clicked[i] === '*'){
+			if( this.clicked[i] === '+' || this.clicked[i] === '-' || this.clicked[i] === '/' ||this.clicked[i] === 'X'){
 
 
 				//Parse number on left of operator
@@ -105,7 +105,7 @@ const calculator ={
 				else if(this.clicked[i] === '/'){
 					this.output(this.divide(firstNum,secondNum));
 				}
-				else if(this.clicked[i]=== '*'){
+				else if(this.clicked[i]=== 'X'){
 					this.output(this.multiply(firstNum,secondNum));
 				}
 
