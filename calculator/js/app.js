@@ -1,4 +1,4 @@
-let num;
+let num = "";
 let operator = ""
 let calcValue;
 
@@ -6,8 +6,8 @@ $('.number').on('click', (e) => {
 	const numClicked = $(e.currentTarget)
 	if (operator === "") {
 		
-		num = numClicked.text();
-		$('.output').text(num)
+		num += numClicked.text();
+		$('#output').text(num)
 		console.log("num equals: " + num);
 		console.log("numClicked equals: " + numClicked);
 		console.log($(e.currentTarget));
@@ -16,21 +16,21 @@ $('.number').on('click', (e) => {
 
 		if (operator === "+") {
 			calcValue = parseInt(num) + parseInt(numClicked.text());
-			$('.output').text(num)
+			$('#output').text(num)
 			num = calcValue;
 		} else if (operator === '-') {
 			calcValue = parseInt(num) - parseInt(numClicked.text());
-			$('.output').text(num)
+			$('#output').text(num)
 			num = calcValue;
 			
-		} else if (operator === "*") {
+		} else if (operator === "x") {
 			calcValue = parseInt(num) * parseInt(numClicked.text());
-			$('.output').text(num)
+			$('#output').text(num)
 			num = calcValue;
 			
-		} else if (operator === "/") {
+		} else if (operator === "÷") {
 			calcValue = parseInt(num) / parseInt(numClicked.text());
-			$('.output').text(num)
+			$('#output').text(num)
 			num = calcValue;
 			
 		}
@@ -39,19 +39,20 @@ $('.number').on('click', (e) => {
 })
 
 $('.operator').on('click', (e) => {
+	console.log('something is working');
 	operatorClicked = $(e.currentTarget)
 	operator = operatorClicked.text();
-	$('.output').text(operator);
+	$('#output').text(operator);
 })
 
 $('.equals').on('click', () => {
 	console.log("equals statement: " + num);
-	$('.output').text(num);
+	$('#output').text(num);
 })
 
 $('.delete').on('click', () => {
 	num = 0;
 	operator = "";
 	calcValue = null;
-	$('.output').text(0)
+	$('#output').text(0)
 })
