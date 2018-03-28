@@ -1,0 +1,104 @@
+body{
+	background-color: gray;
+	font-family: Courier New;
+}
+
+#calc {
+	/*center a block level element in its parent*/
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	height: 500px;
+	width: 350px;
+	color: white;
+	overflow: auto;
+}
+
+#display{
+	width: 90%;
+	background-color: #3d3d3d;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+}
+
+/*all of the p elements in the display div*/
+/* #display > p would grab the top most p*/
+#display p{
+	font-size: 40pt;
+	text-align: right;
+	margin-right: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+
+}
+
+#buttons {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin-top: 15px;*/ /*pushes the element down from the parent div*/
+	/*telling css that this parent element is going to be using flexbox stuff*/
+	display: flex;
+	flex-direction: column;
+
+}
+
+.row{
+	display:flex;
+	justify-content: space-between;
+/*	height: 50px;*/
+/*	width: 5px; removing width so that it defaults to 100%/ makes a real full length row*/
+	margin-top: 20px;
+	margin-top: 20px;
+}
+
+.row > div{
+	background-color: #3d3d3d;
+	font-family: Courier New;
+	/*add space between the rows*/
+
+	color: white;
+	height: 60px;
+	width: 60px;
+	/*text align only does the text. Adding margin would change the entire element.*/
+	text-align: center;
+	font-size: 20pt;
+	font-weight: 500;
+	/*changed where the actual text sits in the div. */
+	line-height: 50px;
+
+}
+
+/*all of the rows in the div with the class double*/
+.row > div#double{
+	width: 145px;
+}
+
+.row > div#func {
+	background-color: #FF8C00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
