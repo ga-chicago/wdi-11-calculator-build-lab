@@ -18,8 +18,8 @@ $('.square').on('click', (e) => {
 //Click on function + store value
 $('.functions').on('click', (e) => {
 	let $targetFunction = $(e.currentTarget).text();
-	funcArray.push($targetFunction);
-	//$('header').text("Stored Numbers: " + numArray + "\n" + "Stored Functions: " + funcArray);
+	// funcArray.push($targetFunction);
+	// $('header').text("Stored Numbers: " + numArray + "\n" + "Stored Functions: " + funcArray);
 	console.log('clicked function ' + $targetFunction)
 	console.log(funcArray);
 })
