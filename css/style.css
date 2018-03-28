@@ -1,28 +1,50 @@
 body {
 	background-color: black;
+	background-image: url("images/matrix_backdrop.jpg")
 }
-
-div {
-
+body * {
+	box-sizing: border-box;
 }
 .container {
-	left-margin: 50%;
+	margin: 0 auto;
 	text-align: center;
-	height: 400px;
+	height: 355px;
 	width: 300px;
 	max-width: 275px;
 	max-height: 400px;
 	border: 2px solid white;
 	background-color: #F3EBFC;
 }
-.container * {
-
+.center {
+/*	margin-left: 50vw;
+	border: 2px solid white;
+	background-color: #F3EBFC;*/
 }
-.numbers {
-	display: inline-block;
+.display {
+	width: 99.9%;
+	margin-bottom: 1px;
+}
+.row1 { 
+	display: inline-flex;
+	justify-content: space-between;
+	width: 271px;
+}
+.row2 { 
+	display: inline-flex;
+	justify-content: space-between;
+	width: 271px;
+}
+.row3 { 
+	display: inline-flex;
+	justify-content: space-between;
+	width: 271px;
+}
+.row4 { 
+	display: inline-flex;
+	justify-content: space-between;
+	width: 271px;
 }
 input {
-	display: block;
 	padding: 14px;
 	max-width: 260px;
 	background-color: rgba(187,232,61,0.6);
@@ -41,6 +63,6 @@ button {
 	background-color: rgba(242, 34, 79, 0.6);
 }
 #clear {
-	width: 97%;
-	max-width: 97%;
+	width: 99.9%;
+	max-width: 99.9%;
 }
