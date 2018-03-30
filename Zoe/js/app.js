@@ -1,70 +1,51 @@
-console.log("hello! this is a calculator!");
 
-//User Stories
-//user clicks numbers and operators to calculate mathematical expression
-
-//Data State
-//numbers clicked
-//operators clicked
-//function performed to evaluate mathematical expression entered
-
-//define variables for clarity
-let $display = $('#display');
+let num = "";
+let num2 = "";
+let operator = "";
 
 
-let $numbers = $('.num');
-let $operators = $('.operations');
-let $equals = $('#equals');
-let $clear = $('#clear');
+$('.num').on('click', (e) => {
+	const numClicked = $(e.currentTarget)
+	if (operator === "") {
+		num = numClicked.text();
+		$('#display').text(num)
+	} else {
+		num2 += numClicked.text();
+		$('#display').text(num2);
+	}
+})
 
-//these will be used in the final expression
-let intOne = [];
-let intTwo = [];
+$('.operations').on('click', (e) => {
+	const operatorClicked = $(e.currentTarget)
+	operator += operatorClicked.text();
+	$('#display').text(operator);
+})
 
-//define functions for clicking on numbers, operators & clear/equals IDs
-$numbers.on('click', () => {
-  //get value of number
-  numValue = $(event.currentTarget).text()
-    console.log(numValue);
-  //store number displayed
-  numToDisplay = $display.text($display.text() + numValue).text();
-});
+const math = (n1, n2) => {
+	let calcValue;
 
-$operators.on('click', () => {
-  //get value of number clicked
-  opsValue = $(event.currentTarget).text()
-  console.log(opsValue);
-	//store operations displayed
-	opToDisplay = $display.text($display.text() + opsValue).text();
-	// }
-});
+	if (operator === "+") {
+		calcValue = parseInt(n1) + parseInt(n2);
+	} else if (operator === "-") {
+		calcValue = parseInt(n1) - parseInt(n2);
+	} else if (operator === "x") {
+		calcValue = parseInt(n1) * parseInt(n2)
+	} else if (operator ==="÷") {
+		calcValue = parseInt(n1) / parseInt(n2)
+	}
+	return calcValue;
+}
 
-$equals.on('click', () => {
-  //get value of numbers and operators
-  //here is where your math logic lives!
-  eqValue = $(event.currentTarget).text()
-  console.log(eqValue);
-  if(opToDisplay === '+') {
-    numValue + numToDisplay
-  } else if(opToDisplay === '-') {
-    numValue - numToDisplay
-  } else if (opToDisplay === '*') {
-    numValue * numToDisplay
-  } else if (opToDisplay === '/') {
-    numValue / numToDisplay
-  } else {
-    null;
-  }
-  
-  //still needs functionality
-});
+$('#equals').on('click', () => {
+	let result = math(num, num2);
+	$('#display').text(result)
+	num2 = "";
+	num = result;
+})
 
-$clear.on('click', () => {
-  clearValue = $(event.currentTarget).text()
-  console.log(clearValue);
-//if all data = null, clear the display
-  intOne = null;
-	$operators = null;
-	intTwo = null;
-	$display.empty()
+$('#clear').on('click', () => {
+	num = "";
+	operator = "";
+	calcValue = null;
+	$('#display').text(0)
 });
