@@ -39,7 +39,7 @@ Hey! It's a new vocabulary word!
 
 ## Setup
 
-1. Create a directory in today's folder (a nice name for today might be `03_26_building_apps`) called `calculator`.
+1. Create a directory in today's folder (a nice name for today might be `06_25_building_apps`) called `calculator-lab`.
 
 2. Create our usual setup, remember to include jQuery.
 
