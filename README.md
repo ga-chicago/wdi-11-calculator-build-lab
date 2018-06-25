@@ -1,7 +1,3 @@
-![ga](http://mobbook.generalassemb.ly/ga_cog.png)
-
-# wdi-11-chi _curious-turtles_
-
 ---
 Title: Calculator <br>
 Type: Lab <br>
@@ -18,7 +14,6 @@ Prerequisites: Javascript, CSS, HTML <br>
 # Calculator
 
 ## Lets build a calculator!
-![loop](http://www.mememaker.net/static/images/memes/3861758.jpg)
 
 - Build a calculator in your browser!
 
