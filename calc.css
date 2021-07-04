@@ -1,0 +1,48 @@
+#calc {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: navy;
+	width: 350px;
+	height: 500px;
+	color: whitesmoke;
+	overflow: auto;
+}
+
+#display {
+	width: 90%;
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	font-size: 40pt;
+	font-family: Arial, Helvetica;
+	text-align: right;
+
+}
+
+#buttons {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.row > div {
+	font-family: Arial, Helvetica;
+	background-color: lightblue;
+	color: black;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	font-size: 35px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
