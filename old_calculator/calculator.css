@@ -1,0 +1,30 @@
+body{
+	background-color: #BE90D4;
+	font-family: Courier New;
+}
+
+header {
+	width: 99%;
+	height: 100px;
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+}
+
+div.square {
+  width:  48.16%;
+  height: 75px;
+  display: inline-block;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+}
+
+div.functions, div.equals, div.clear{
+  width:  19%;
+  height: 50px;
+  display: inline-block;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+}
